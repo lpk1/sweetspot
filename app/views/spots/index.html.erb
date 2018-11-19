@@ -1,0 +1,8 @@
+<h1>Look at these awesome camping spots</h1>
+
+<ul>
+  <% @spots.each do |spot| %>
+  <li> <%= link_to "#{spot.name}", spot_path %>
+  </li>
+  <%= end %>
+</ul>
