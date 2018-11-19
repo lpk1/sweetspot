@@ -6,15 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create([
-  { email: "testemail@12345me.com", encrypted_password: "12345", first_name: "jamie", last_name: "brouwer"},
-  { email: "christmaspowder@anonymous.com", encrypted_password: "98765", first_name: "rhett", last_name: "büttrich"}
-])
+
+
+# check again how users are created. they do NOT seem to get an id. are they saved?
+user1 = User.new(email: "testemail@12345me.com", encrypted_password: "12345", first_name: "jamie", last_name: "brouwer")
+user2 = User.new(email: "christmaspowder@anonymous.com", encrypted_password: "98765", first_name: "rhett", last_name: "büttrich")
+user1.save
+user2.save
+
+p user1
+p user2
 
 spots = Spot.create([
-  { name: "Miami Beach", latitude: rand(-1, 1) * 90, longitude: rand(-1, 1) * 180, description: "Hi there this is a nice place in miami for camping."},
-  { name: "Southpole", latitude: rand(-1, 1) * 90, longitude: rand(-1, 1) * 180, description: "Southpole. Flat out stunning landscape. Haven't found an single eis-beergen"}
+  { name: "Miami Beach", latitude: rand() * 90, longitude: rand() * 180, description: "Hi there this is a nice place in miami for camping."},
+  { name: "Southpole", latitude: rand() * 90, longitude: rand() * 180, description: "Southpole. Flat out stunning landscape. Haven't found an single eis-beergen"}
 ])
+ p spots
 
 spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing")
 spot_review.user = User.find(1)
