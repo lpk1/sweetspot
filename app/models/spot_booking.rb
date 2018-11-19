@@ -1,0 +1,2 @@
+class SpotBooking < ApplicationRecord
+end
