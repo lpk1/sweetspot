@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :spots do
-    resources :spot_bookings, only: %i[create, new]
-    resources :spot_reviews, only: %i[create, new]
+    resources :spot_bookings, only: [:create, :new]
+    resources :spot_reviews, only: [:create, :new]
   end
 
   resources :users, only: [:show]
