@@ -1,11 +1,12 @@
 class SpotsController < ApplicationController
 
   def index
-    @spots = Spot.all
+    @spots = policy_scope(Spot).all
   end
 
   def show
     @spot = Spot.find(params[:id])
+    authorize @spot
   end
 
   def new
