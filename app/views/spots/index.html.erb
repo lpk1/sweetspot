@@ -1,16 +1,16 @@
+<h1>Look at these awesome camping spots</h1>
 
 <div class="container">
-  <h1>Look at these awesome camping spots</h1>
-
-  <ul>
+  <div class="row">
     <% @spots.each do |spot| %>
-    <li> <%= link_to "#{spot.name}", spot_path(spot) %>
-    </li>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2> <%= link_to "#{spot.name}", spot_path(spot) %></h2>
+          <p>Very cool place, everybody loves it.</p>
+        </div>
+      </div>
+    </div>
     <% end %>
-  </ul>
-
-  <%= link_to "Create New Spot",  new_spot_path %>
-
-  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-
 </div>
