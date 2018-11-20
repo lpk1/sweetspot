@@ -2,14 +2,25 @@
 
 <br>
 
+<% if user_signed_in? %>
+
 <h3><%= current_user.email %></h3>
 <h3><%= @spot.user.email %></h3>
-
-<br>
-<br>
-
-<% if @spot.user == current_user %>
-  <h3>Is_Owner 👍🏼</h3>
 <% else %>
-  <h3>Not_Owner</h3>
+<h3>Not signed in</h3>
 <% end %>
+<br>
+<br>
+
+  <% if @spot.user == current_user %>
+    <h3>Is_Owner 👍🏼</h3>
+  <% else %>
+    <h3>Not_Owner</h3>
+  <% end %>
+
+<% @reviews.each do |review| %>
+<%= review.review_description %>
+
+<% end %>
+
+<%#= render "spot_reviews/form"  %>
