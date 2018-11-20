@@ -1,1 +1,7 @@
-
+<%= simple_form_for [@spot] do |f| %>
+  <%= f.input :name, label: "Title" %>
+  <%= f.input :latitude, label: "Latitude"  %>
+  <%= f.input :longitude, label: "Longitude"  %>
+  <%= f.input :description, label: "Description"  %>
+  <%= f.submit "Add a spot", class: "btn btn-primary" %>
+<% end %>

@@ -2,7 +2,7 @@
 
 <ul>
   <% @spots.each do |spot| %>
-  <li> <%= link_to "#{spot.name}", spot_path %>
+  <li> <%= link_to "#{spot.name}", spot_path(spot) %>
   </li>
   <% end %>
 </ul>
