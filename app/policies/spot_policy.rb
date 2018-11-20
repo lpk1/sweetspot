@@ -9,10 +9,18 @@ class SpotPolicy < ApplicationPolicy
     return true
   end
 
-  def create?
+   def new?
     return true
   end
 
+  def create?
+    new?
+  end
+
+
+  def update?
+     record.user == user
+  end
 
 
 

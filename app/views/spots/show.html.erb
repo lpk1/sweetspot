@@ -18,3 +18,9 @@
     <h3>Not_Owner</h3>
   <% end %>
 
+<% @reviews.each do |review| %>
+<%= review.review_description %>
+
+<% end %>
+
+<%#= render "spot_reviews/form"  %>

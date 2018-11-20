@@ -6,15 +6,19 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @reviews = SpotReview.where(spot_id: @spot)
+    @review = SpotReview.new
     authorize @spot
   end
 
   def new
     @spot = Spot.new
+    authorize @spot
   end
 
   def create
     spot = Spot.new(spot_params)
+    authorize spot
     spot.user = current_user
     spot.save
     redirect_to spots_path
