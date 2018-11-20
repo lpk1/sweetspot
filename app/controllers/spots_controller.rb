@@ -36,7 +36,9 @@ class SpotsController < ApplicationController
 
   def destroy
     @spot = Spot.find(params[:id])
+
     @spot.destroy
+    authorize @spot
   end
 
   private
