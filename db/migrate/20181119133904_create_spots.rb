@@ -5,6 +5,7 @@ class CreateSpots < ActiveRecord::Migration[5.2]
       t.string :latitude
       t.string :longitude
       t.text :description
+      t.references :user
 
       t.timestamps
     end

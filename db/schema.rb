@@ -16,25 +16,25 @@ ActiveRecord::Schema.define(version: 2018_11_19_134129) do
   enable_extension "plpgsql"
 
   create_table "spot_bookings", force: :cascade do |t|
-    t.bigint "spots_id"
-    t.bigint "users_id"
+    t.bigint "spot_id"
+    t.bigint "user_id"
     t.date "booking_date"
     t.boolean "is_approved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["spots_id"], name: "index_spot_bookings_on_spots_id"
-    t.index ["users_id"], name: "index_spot_bookings_on_users_id"
+    t.index ["spot_id"], name: "index_spot_bookings_on_spot_id"
+    t.index ["user_id"], name: "index_spot_bookings_on_user_id"
   end
 
   create_table "spot_reviews", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "spots_id"
+    t.bigint "user_id"
+    t.bigint "spot_id"
     t.integer "spot_rating"
     t.text "review_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["spots_id"], name: "index_spot_reviews_on_spots_id"
-    t.index ["users_id"], name: "index_spot_reviews_on_users_id"
+    t.index ["spot_id"], name: "index_spot_reviews_on_spot_id"
+    t.index ["user_id"], name: "index_spot_reviews_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 2018_11_19_134129) do
     t.string "latitude"
     t.string "longitude"
     t.text "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
