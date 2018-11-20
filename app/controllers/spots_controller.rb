@@ -1,4 +1,5 @@
 class SpotsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @spots = policy_scope(Spot).all
@@ -36,7 +37,9 @@ class SpotsController < ApplicationController
 
   def destroy
     @spot = Spot.find(params[:id])
+
     @spot.destroy
+    authorize @spot
   end
 
   private

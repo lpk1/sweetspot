@@ -22,6 +22,10 @@ class SpotPolicy < ApplicationPolicy
      record.user == user
   end
 
+  def destroy?
+    record.user == user
+  end
+
 
 
   class Scope < Scope
