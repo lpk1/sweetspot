@@ -1,0 +1,8 @@
+<h1>Your Listings:</h1>
+
+<% @listings.each do |listing| %>
+  <h3><% listing.name %>:</h3>
+  <h3>Latitude: <% listing.latitude %></h3>
+  <h3>Longitude: <% listing.longitude %></h3>
+  <h3>Price: free</h3>
+<% end %>

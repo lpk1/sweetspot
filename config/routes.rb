@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     resources :spot_reviews, only: [:create, :new]
   end
 
+  get 'users/bookings', to: "users#bookings", as: :user_show_bookings
+  get 'users/listings', to: "users#listings", as: :user_show_listings
+
   resources :users, only: [:show]
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
