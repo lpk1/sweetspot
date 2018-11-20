@@ -1,8 +1,14 @@
-<h1>Look at these awesome camping spots</h1>
 
-<ul>
-  <% @spots.each do |spot| %>
-  <li> <%= link_to "#{spot.name}", spot_path(spot) %>
-  </li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>Look at these awesome camping spots</h1>
+
+  <ul>
+    <% @spots.each do |spot| %>
+    <li> <%= link_to "#{spot.name}", spot_path(spot) %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create New Spot",  new_spot_path %>
+
+</div>

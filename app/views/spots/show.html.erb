@@ -1,26 +1,30 @@
-<h1><%= @spot.name %></h1>
+<div class="container">
+  <h1><%= @spot.name %></h1>
 
-<br>
+  <br>
 
-<% if user_signed_in? %>
+  <% if user_signed_in? %>
 
-<h3><%= current_user.email %></h3>
-<h3><%= @spot.user.email %></h3>
-<% else %>
-<h3>Not signed in</h3>
-<% end %>
-<br>
-<br>
-
-  <% if @spot.user == current_user %>
-    <h3>Is_Owner 👍🏼</h3>
+  <h3>Current User: <%= current_user.email %></h3>
+  <h3>Spot Owner: <%= @spot.user.email %></h3>
   <% else %>
-    <h3>Not_Owner</h3>
+  <h3>Not signed in</h3>
   <% end %>
+  <br>
+  <br>
 
-<% @reviews.each do |review| %>
-<%= review.review_description %>
+    <% if @spot.user == current_user %>
+      <h3>Is_Owner 👍🏼</h3>
+    <% else %>
+      <h3>Not_Owner</h3>
+    <% end %>
 
-<% end %>
+  <% @reviews.each do |review| %>
+  <%= review.review_description %>
 
+  <% end %>
+  <br>
+  <%= link_to "Go Back",  spots_path %>
+
+</div>
 <%#= render "spot_reviews/form"  %>
