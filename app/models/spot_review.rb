@@ -1,4 +1,4 @@
 class SpotReview < ApplicationRecord
-  belongs_to :User
-  belongs_to :Spot
+  belongs_to :user
+  belongs_to :spot
 end

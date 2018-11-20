@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  has_many :Reviews
-  has_many :Spotbookings
-  belongs_to :User
+  has_many :spot_reviews
+  has_many :spot_bookings
+  belongs_to :user
 end

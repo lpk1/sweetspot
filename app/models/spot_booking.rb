@@ -1,5 +1,5 @@
 class SpotBooking < ApplicationRecord
-  belongs_to :Spot
-  belongs_to :User
+  belongs_to :spot
+  belongs_to :user
 
 end
