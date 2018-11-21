@@ -22,7 +22,14 @@
   <% @reviews.each do |review| %>
   <%= review.review_description %>
 
+
+
   <% end %>
+  <br>
+  <% if @spot.user == current_user %>
+  <%= link_to "Delte this spot",  spot_path(@spot), :method => :delete %>
+  <% end %>
+  <br>
   <br>
   <%= link_to "Go Back",  spots_path %>
 
