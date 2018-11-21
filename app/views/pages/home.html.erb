@@ -1,8 +1,8 @@
 <div class="banner" style="background-image: url(<%= asset_path "banner_background.jpeg" %>)">
   <div class="banner-content">
     <div class="row" id="banner-login">
-      <%= link_to 'Login', '#', {:style=>'color:#FFFFFF;'}  %>
-      <%= link_to 'SignUp', '#', {:style=>'color:#FFFFFF;'} %>
+      <%= link_to 'Login', new_user_session_path, {:style=>'color:#FFFFFF;'}  %>
+      <%= link_to 'SignUp', new_user_registration_path, {:style=>'color:#FFFFFF;'} %>
     </div>
     <%= render "shared/landing_cta" %>
   </div>
