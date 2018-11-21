@@ -1,7 +1,6 @@
 <div class="banner" style="background-image: url(<%= asset_path "banner_background.jpeg" %>)">
   <div class="banner-content">
     <div class="row" id="banner-login">
-
     </div>
     <h2>Log in</h2>
 
@@ -18,9 +17,10 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", {:class=> "btn btn-danger btn-lg"} %>
       </div>
     <% end %>
+    <br>
     <%= render "devise/shared/links" %>
   </div>
 </div>
