@@ -1,0 +1,5 @@
+<%= simple_form_for [@spot, @spot_booking] do |f| %>
+  <%= f.input :start_date, label: "Arrival" %>
+  <%= f.input :end_date, label: "Departure" %>
+  <%= f.submit "Add this booking", class: "btn btn-primary" %>
+<% end %>
