@@ -1,4 +1,4 @@
-.card-listing {
+.card-booking {
   height: 230px;
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -6,7 +6,7 @@
   color: #5A5A5A;
   position: relative;
 }
-.card-user-listing {
+.card-user-booking {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -29,27 +29,27 @@
     border-radius: 50%;
 }
 
-.card-category-listing {
+.card-category-booking {
   position: absolute;
   top: 20px;
   left: 350px;
   font-size: 40px;
   // text-transform: uppercase;
 }
-.card-description-listing {
+.card-description-booking {
   position: absolute;
   top: 70px;
   left: 350px;
 }
-.card-description-listing h2 {
+.card-description-booking h2 {
   font-size: 24px;
 }
-.card-description-listing p {
+.card-description-booking p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
 }
-.card-link-listing {
+.card-link-booking {
   position: absolute;
   top: 0;
   bottom: 0;
