@@ -25,11 +25,11 @@ spot2 = Spot.new(name: "Southpole", address: "Southpole", latitude: rand() * 90,
 spot2.user = user1
 spot2.save
 
-spot3 = Spot.new(name: "Bavaria", address: "München", latitude: rand() * 90, longitude: rand() * 180, description: "Bavariaaaaaaa")
+spot3 = Spot.new(name: "Bavaria", address: "München", latitude: rand() * 90, longitude: rand() * 180, description: "Bavariaaaaaaa. It has beeeeer")
 spot3.user = user3
 spot3.save
 
-spot4 = Spot.new(name: "Berlin", address: "rudi-dutschke-strasse 60", latitude: rand() * 90, longitude: rand() * 180, description: "Berlin. City of awsome")
+spot4 = Spot.new(name: "Berlin", address: "rudi-dutschke-strasse 60", latitude: rand() * 90, longitude: rand() * 180, description: "Berlin. City of awsome. Is this enough characters?")
 spot4.user = user3
 spot4.save
 
@@ -37,17 +37,17 @@ spot5 = Spot.new(name: "Santa Cruz", address: "Santa Cruz", latitude: rand() * 9
 spot5.user = user2
 spot5.save
 
-spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing")
+spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing. Miami is the sh*t.")
 spot_review.user = user1
 spot_review.spot = spot1
 spot_review.save!
 
-spot_review_two = SpotReview.new(spot_rating: 5, review_description: "Can NOT believe how good this was.")
+spot_review_two = SpotReview.new(spot_rating: 3, review_description: "Can NOT believe how good this was.")
 spot_review_two.user = user2
 spot_review_two.spot = spot2
 spot_review_two.save!
 
-spot_review_three = SpotReview.new(spot_rating: 5, review_description: "Can NOT believe how good this was.")
+spot_review_three = SpotReview.new(spot_rating: 4, review_description: "Can NOT believe how good this was.")
 spot_review_two.user = user3
 spot_review_two.spot = spot1
 spot_review_two.save!
