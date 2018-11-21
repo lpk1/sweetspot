@@ -1,0 +1,24 @@
+<div class="card-booking">
+  <div class="card-category-booking"><%= booking.spot.name %></div>
+  <div class="card-description-booking">
+    <p><%= booking.spot.description %></p>
+
+    <p><% if booking.is_approved%></p>
+    <p class="approved">Status: <%= "Approved!" %></p>
+    <% else %>
+    <p class= "pending">Status: <%= "Pending" %></p>
+    <% end %>
+
+    <p>From: <%= booking.start_date %> to: <%= booking.end_date %></p>
+    <p>Price: FREE</p>
+    <p>3.1 💚💚💚🖤🖤</p>
+  </div>
+
+  <img class="main_image" src="https://www.seattlemag.com/sites/default/files/field/image/11906303179a5642b40do_0.jpg">
+  <img class="map_img" src="https://staticmapmaker.com/img/google.png">
+
+  <img class="card-user-booking" src="https://www.fabulousfaces.com/lib/upload/lrs1595.jpg">
+
+
+  <a class="card-link-booking" href="#" ></a>
+</div>
