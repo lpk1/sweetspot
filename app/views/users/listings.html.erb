@@ -1,7 +1,7 @@
 <% if @listings.length != 0 %>
   <h1>Your Listings:</h1>
   <% @listings.each do |listing| %>
-  <br>
+    <br>
     <%= render "shared/listing_card", listing: listing %>
   <% end %>
 <% else %>
@@ -9,14 +9,4 @@
   <h1><%= link_to "Add your Spot!", new_spot_path %></h1>
 <% end %>
 
-    <% @listings.each do |listing| %>
-    <br>
-      <%= render "shared/listing_card", listing: listing %>
-    <% end %>
-  <% else %>
-    <h3>You don't have any listings so far. Go ahead,</h3>
-    <h1><%= link_to "Add your Spot!", new_spot_path %></h1>
-  <% end %>
-
-
-</div>
+<!-- </div> -->
