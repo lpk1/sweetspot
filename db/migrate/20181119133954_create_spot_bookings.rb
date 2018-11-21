@@ -3,7 +3,8 @@ class CreateSpotBookings < ActiveRecord::Migration[5.2]
     create_table :spot_bookings do |t|
       t.references :spot
       t.references :user
-      t.date :booking_date
+      t.date :start_date
+      t.date :end_date
       t.boolean :is_approved
 
       t.timestamps

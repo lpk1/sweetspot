@@ -1,0 +1,8 @@
+<h1>Your Listings:</h1>
+
+<% @listings.each do |listing| %>
+
+  <%= render "shared/listing_card", listing: listing %>
+<% end %>
+
+
