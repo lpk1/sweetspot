@@ -7,6 +7,9 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+
+    @your_bookings = SpotBooking.where(user_id: current_user.id, spot_id: params[:id])
+
     @reviews = SpotReview.where(spot_id: @spot)
     @review = SpotReview.new
     authorize @spot

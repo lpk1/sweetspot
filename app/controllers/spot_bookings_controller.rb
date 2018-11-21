@@ -13,6 +13,7 @@ class SpotBookingsController < ApplicationController
     @spot_booking.save
 
     authorize @spot
+    redirect_to spot_path(@spot)
   end
 
   private

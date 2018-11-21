@@ -17,8 +17,20 @@
       <h3>Is_Owner 👍🏼</h3>
     <% else %>
       <h3>Not_Owner</h3>
-      <h3>Book</h3>
-      <%= link_to "Book this Spot", new_spot_spot_booking_path(@spot) %>
+
+      <% if @your_bookings.length > 0 %>
+
+        <h3>Your Bookings:</h3>
+        <% @your_bookings.each do |booking| %>
+          <h3>From the <%= booking.start_date %> until the <%= booking.end_date %></h3>
+        <% end %>
+
+      <% else %>
+
+        <h3>Book now!</h3>
+        <%= link_to "Book this Spot", new_spot_spot_booking_path(@spot) %>
+
+      <% end %>
     <% end %>
 
   <% @reviews.each do |review| %>
@@ -29,7 +41,7 @@
   <% end %>
   <br>
   <% if @spot.user == current_user %>
-  <%= link_to "Delte this spot",  spot_path(@spot), :method => :delete %>
+  <%= link_to "Delete this spot",  spot_path(@spot), :method => :delete %>
   <% end %>
   <br>
   <br>
