@@ -3,7 +3,11 @@
   <div class="card-description-booking">
     <p><%= booking.spot.description %></p>
 
-    <p>-<%= booking.is_approved ? "Approved" : "Pending" %></p>
+    <p><% if booking.is_approved%></p>
+    <p class="approved">Status: <%= "Approved!" %></p>
+    <% else %>
+    <p class= "pending">Status: <%= "Pending" %></p>
+    <% end %>
 
     <p>From: <%= booking.start_date %> to: <%= booking.end_date %></p>
     <p>Price: FREE</p>

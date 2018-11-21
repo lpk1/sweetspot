@@ -1,7 +1,7 @@
 <h1>Your Bookings:</h1>
 
 <% @bookings.each do |booking| %>
-  <h3><% booking %></h3>
+  <br>
 
   <%= render "shared/booking_card", booking: booking %>
 <% end %>
