@@ -5,7 +5,9 @@ class SpotReviewsController < ApplicationController
 
   def create
     @spot_review = SpotReview.create(spot_review_params)
-    redirect_to spot_path(@spot_review.spot) # will this work? find out next week on ...
+    redirect_to spot_path(@spot_review.spot)
+  end # will this work? find out next week on ...
+
   private
 
   def spot_review_params
