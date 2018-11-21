@@ -15,6 +15,7 @@ SpotBooking.delete_all
 user1 = User.create(email: "testemail@12345me.com", password: "123456")
 user2 = User.create(email: "christmaspowder@anonymous.com", password: "847463")
 user3 = User.create(email: "eastereggs@jamiesidea.com", password: "4829575")
+user4 = User.create(email: "lenny@me.com", password: "123456")
 
 spot1 = Spot.new(name: "Miami Beach", address: "Miami Beach", latitude: rand() * 90, longitude: rand() * 180, description: "Hi there this is a nice place in miami for camping.")
 spot1.user = user1

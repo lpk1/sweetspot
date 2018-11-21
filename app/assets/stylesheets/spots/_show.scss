@@ -1,4 +1,49 @@
+.flexbox {
+  margin-top: 30px;
+  display: flex;
+}
+
 .show-banner {
   width: 100vw;
   height: 40vh;
+}
+
+.show-map {
+  display: flex-item;
+  align-items: center;
+}
+
+.show-map-image {
+  margin-top: 70px;
+  width: 100%;
+}
+
+.show-review {
+  margin: 10px 0px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.btn-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
