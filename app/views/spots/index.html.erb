@@ -1,16 +1,27 @@
 
-<div class="container">
-  <h1>Look at these awesome camping spots</h1>
-
-  <ul>
-    <% @spots.each do |spot| %>
-    <li> <%= link_to "#{spot.name}", spot_path(spot) %>
-    </li>
-    <% end %>
-  </ul>
-
-  <%= link_to "Create New Spot",  new_spot_path %>
-
-
+<div class="flex-container">
+  <div class="flex-card-item">
+    <div class="container">
+      <div class="row">
+        <% @spots.each do |spot| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+            <div class="card-description">
+              <h2> <%= link_to "#{spot.name}", spot_path(spot), {:style=>'color:#FFFFFF'} %></h2>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+  <div class="flex-map-item">
+      <div id="map" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+            <div class="card-description">
+              <h2> MAP </h2>
+              <p>This is the map</p>
+            </div>
+          </div>
+  </div>
 
 </div>
