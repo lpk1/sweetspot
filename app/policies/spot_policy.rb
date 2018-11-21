@@ -26,7 +26,9 @@ class SpotPolicy < ApplicationPolicy
     record.user == user
   end
 
-
+  def listings?
+    return true
+  end
 
   class Scope < Scope
     def resolve
