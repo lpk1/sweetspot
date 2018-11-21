@@ -1,9 +1,11 @@
-<h1>Your Bookings:</h1>
 
-<% @bookings.each do |booking| %>
-  <br>
+<div class="container">
+  <h1>Your Bookings:</h1>
 
-  <%= render "shared/booking_card", booking: booking %>
-<% end %>
+  <% @bookings.each do |booking| %>
+    <br>
 
+    <%= render "shared/booking_card", booking: booking %>
+  <% end %>
 
+</div>
