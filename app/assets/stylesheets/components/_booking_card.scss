@@ -5,6 +5,7 @@
   background-position: center;
   color: #5A5A5A;
   position: relative;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 .card-user-booking {
   position: absolute;
@@ -59,6 +60,15 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.1;
+
+.pending{
+  color: red;
+}
+
+.approved{
+  color: green;
+}
+
+.card-link-booking:hover {
+  opacity: 0.02;
 }
