@@ -1,15 +1,16 @@
 <div class="container">
   <h1><%= @spot.name %></h1>
 
-  <br>
-
   <% if user_signed_in? %>
-
-  <h3>Current User: <%= current_user.email %></h3>
-  <h3>Spot Owner: <%= @spot.user.email %></h3>
+    <% unless @spot.user == current_user %>
+      <h5>Spot provided by <%= @spot.user.email %></h5>
+    <% else %>
+      <h5>Spot provided by you</h5>
+    <% end %>
   <% else %>
-  <h3>Not signed in</h3>
+      <h5>Log in to see who created this spot.</h5>
   <% end %>
+
   <br>
   <br>
 
@@ -19,11 +20,15 @@
       <h3>Not_Owner</h3>
 
       <% if @your_bookings.length > 0 %>
-
         <h3>Your Bookings:</h3>
         <% @your_bookings.each do |booking| %>
-          <h3>From the <%= booking.start_date %> until the <%= booking.end_date %></h3>
+          <h3><%= (booking.end_date - booking.start_date).to_i %> Days @<%= booking.spot.name %></h3>
+          <h4>From the <%= booking.start_date %> until the <%= booking.end_date %></h4>
         <% end %>
+        <br>
+        <br>
+        <h3>Book Again!</h3>
+        <%= link_to "Book this Spot", new_spot_spot_booking_path(@spot) %>
 
       <% else %>
 
