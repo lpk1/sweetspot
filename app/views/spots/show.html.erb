@@ -1,49 +1,77 @@
 <img class="show-banner" src="https://picsum.photos/1200/600" alt="">
 
-<div class="container">
-  <h1><%= @spot.name %></h1>
+<div class="container flexbox">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="show-content">
 
-  <% if user_signed_in? %>
-    <% unless @spot.user == current_user %>
-      <h5>Spot provided by <%= @spot.user.email %></h5>
-    <% else %>
-      <h5>Spot provided by you</h5>
-    <% end %>
-  <% else %>
-      <h5>Log in to see who created this spot.</h5>
-  <% end %>
+        <div class="show-title">
+          <h1><%= @spot.name %></h1>
+        </div>
 
-    <% if @spot.user == current_user %>
-      <h3>Others Bookings</h3>
-    <% else %>
+        <br>
 
-      <% if @your_bookings.length > 0 %>
-        <h3>Your Bookings:</h3>
-        <% @your_bookings.each do |booking| %>
-          <h3><%= (booking.end_date - booking.start_date).to_i %> Days @<%= booking.spot.name %></h3>
-          <h4>From the <%= booking.start_date %> until the <%= booking.end_date %></h4>
+        <div class="show-info">
+          <h5><%= @spot.description %></h5>
+        </div>
+
+        <div class="show-header">
+          <% if user_signed_in? %>
+            <% unless @spot.user == current_user %>
+              <h6>- spot provided by <%= @spot.user.email %></h6>
+            <% else %>
+              <h6>- spot provided by you</h6>
+            <% end %>
+          <% else %>
+              <h6>- log in to see who created this spot.</h6>
+          <% end %>
+        </div>
+
+        <br>
+        <br>
+
+        <% if @spot.user == current_user %>
+          <h3>Others Bookings</h3>
+        <% else %>
+          <% if @your_bookings.length > 0 %>
+            <h3>Your Bookings:</h3>
+            <% @your_bookings.each do |booking| %>
+              <h3><%= (booking.end_date - booking.start_date).to_i %> Days @<%= booking.spot.name %></h3>
+              <h4>From the <%= booking.start_date %> until the <%= booking.end_date %></h4>
+            <% end %>
+            <br>
+            <br>
+            <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot)%></h3>
+          <% else %>
+            <h3><%= link_to "Book this Spot now!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"  %></h3>
+          <% end %>
         <% end %>
+
+        <% @reviews.each do |review| %>
+          <div class="show-review">
+            <h5><%= review.user.email %> wrote on <%= review.created_at %>:</h5>
+            <h6><%= review.review_description %></h6>
+          </div>
+        <% end %>
+
+        <br>
+
+        <% if @spot.user == current_user %>
+          <%= link_to "Delete this spot",  spot_path(@spot), :method => :delete %>
+        <% end %>
+
         <br>
         <br>
-        <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot) %></h3>
-      <% else %>
-        <h3><%= link_to "Book this Spot now!", new_spot_spot_booking_path(@spot) %></h3>
-      <% end %>
-    <% end %>
 
-  <% @reviews.each do |review| %>
-  <%= review.review_description %>
+        <%= link_to "Go Back",  spots_path %>
+      </div>
+    </div>
 
-
-
-  <% end %>
-  <br>
-  <% if @spot.user == current_user %>
-  <%= link_to "Delete this spot",  spot_path(@spot), :method => :delete %>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to "Go Back",  spots_path %>
-
+    <div class="col-xs-12 col-sm-6">
+      <div class="show-map">
+        <img class="show-map-image" src="https://snazzy-maps-cdn.azureedge.net/assets/127403-no-label-bright-colors.png?v=20171101110035" alt="">
+      </div>
+    </div>
+  </div>
 </div>
 <%#= render "spot_reviews/form"  %>
