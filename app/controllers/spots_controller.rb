@@ -35,7 +35,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     @spot.update(spot_params)
-    redirect_to spots_path
+    redirect_to spot_path(@spot)
   end
 
   def destroy
@@ -43,6 +43,7 @@ class SpotsController < ApplicationController
 
     @spot.destroy
     authorize @spot
+    redirect_to spots_path
   end
 
   private
