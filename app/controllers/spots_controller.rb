@@ -8,7 +8,11 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
 
-    @your_bookings = SpotBooking.where(user_id: current_user.id, spot_id: params[:id])
+    if user_signed_in?
+      @your_bookings = SpotBooking.where(user_id: current_user.id, spot_id: params[:id])
+    else
+      @your_bookings = []
+    end
 
     @reviews = SpotReview.where(spot_id: @spot)
     @review = SpotReview.new
