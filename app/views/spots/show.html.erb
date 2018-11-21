@@ -1,3 +1,7 @@
+<div class="show-banner">
+  <img src="https://picsum.photos/1200/600" alt="">
+</div>
+
 <div class="container">
   <h1><%= @spot.name %></h1>
 
@@ -11,13 +15,9 @@
       <h5>Log in to see who created this spot.</h5>
   <% end %>
 
-  <br>
-  <br>
-
     <% if @spot.user == current_user %>
-      <h3>Is_Owner 👍🏼</h3>
+      <h3>Others Bookings</h3>
     <% else %>
-      <h3>Not_Owner</h3>
 
       <% if @your_bookings.length > 0 %>
         <h3>Your Bookings:</h3>
@@ -27,14 +27,9 @@
         <% end %>
         <br>
         <br>
-        <h3>Book Again!</h3>
-        <%= link_to "Book this Spot", new_spot_spot_booking_path(@spot) %>
-
+        <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot) %></h3>
       <% else %>
-
-        <h3>Book now!</h3>
-        <%= link_to "Book this Spot", new_spot_spot_booking_path(@spot) %>
-
+        <h3><%= link_to "Book this Spot now!", new_spot_spot_booking_path(@spot) %></h3>
       <% end %>
     <% end %>
 
