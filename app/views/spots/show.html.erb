@@ -31,11 +31,11 @@
         <br>
 
         <% if @spot.user == current_user %>
-          <h3>Others Bookings</h3>
+          <h3 style="text-align: center;">Others Bookings</h3>
           <%= render "showbookings", your_bookings: @your_bookings %>
         <% else %>
           <% if @your_bookings.length > 0 %>
-            <h3>Your Bookings:</h3>
+            <h3 style="text-align: center;">Your Bookings:</h3>
             <%= render "showbookings", your_bookings: @your_bookings %>
             <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"%></h3>
             <br>
@@ -43,7 +43,6 @@
             <h3><%= link_to "Book this Spot now!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"  %></h3>
           <% end %>
         <% end %>
-
 
         <br>
 
