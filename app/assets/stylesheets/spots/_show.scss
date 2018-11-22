@@ -21,6 +21,7 @@
 }
 
 .show-review {
+  padding: 0px 10px;
   margin: 10px 0px;
   border-style: solid;
   border-width: 1px;
@@ -48,4 +49,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.show-booking {
+  padding: 0px 10px;
+  margin: 7px 0px;
+  border-style: solid;
+  border-width: 1px;
 }

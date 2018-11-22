@@ -16,6 +16,15 @@ class SpotBookingsController < ApplicationController
     redirect_to spot_path(@spot)
   end
 
+  def destroy
+    @booking = SpotBooking.find(params[:id])
+    @spot = @booking.spot
+
+    @booking.destroy
+    authorize @booking
+    redirect_to spot_path(@spot)
+  end
+
   private
 
   def spot_booking_params

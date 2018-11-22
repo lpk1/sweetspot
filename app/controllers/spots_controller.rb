@@ -3,13 +3,26 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot).all
+
+    @map_spots = Spot.where.not(latitude: nil, longitude: nil)
+
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
+
+      }
+    end
   end
 
   def show
     @spot = Spot.find(params[:id])
 
-    if user_signed_in?
+    if user_signed_in? && current_user != @spot.user
       @your_bookings = SpotBooking.where(user_id: current_user.id, spot_id: params[:id])
+    elsif user_signed_in? && current_user == @spot.user
+      @your_bookings = SpotBooking.where(spot_id: params[:id])
     else
       @your_bookings = []
     end
@@ -34,11 +47,13 @@ class SpotsController < ApplicationController
 
   def edit
     @spot = Spot.find(params[:id])
+    authorize @spot
   end
 
   def update
     @spot = Spot.find(params[:id])
     @spot.update(spot_params)
+    authorize @spot
     redirect_to spot_path(@spot)
   end
 
