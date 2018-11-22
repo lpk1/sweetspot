@@ -15,6 +15,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
   });
 
   const markers = JSON.parse(mapElement.dataset.markers);
+  markers.className = 'marker';
 
   markers.forEach((marker) => {
     new mapboxgl.Marker()
