@@ -32,27 +32,11 @@
 
         <% if @spot.user == current_user %>
           <h3>Others Bookings</h3>
+          <%= render "showbookings", your_bookings: @your_bookings %>
         <% else %>
           <% if @your_bookings.length > 0 %>
             <h3>Your Bookings:</h3>
-
-            <% @your_bookings.each do |booking| %>
-              <h3><%= (booking.end_date - booking.start_date).to_i %> Days @<%= booking.spot.name %></h3>
-
-              <% if booking.is_approved %>
-                <span style="display: inline;"><i class="fas fa-circle" style="color: green"></i></span>
-                <p style="display: inline;" class="approved">Approval: <%= "Approved!" %></p>
-              <% else %>
-                <span style="display: inline;"><i class="fas fa-circle" style="color: red"></i></span>
-                <p style="display: inline;" class= "pending">Approval: <%= "Pending" %></p>
-
-              <%# This is to add a booking removal button. Only visible if booking is pending, not approved. %>
-              <p style= "z-index: 3; display: inline-block;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_spot_booking_path(booking.spot, booking), style: "color: #5a5a5a;", :method => :delete %></p>
-
-              <% end %>
-
-              <h5>From the <%= booking.start_date %> until the <%= booking.end_date %></h5>
-            <% end %>
+            <%= render "showbookings", your_bookings: @your_bookings %>
             <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"%></h3>
             <br>
           <% else %>

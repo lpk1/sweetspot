@@ -56,7 +56,7 @@ spot_review_two.user = user3
 spot_review_two.spot = spot1
 spot_review_two.save!
 
-spot_booking_one = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: true)
+spot_booking_one = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: false)
 spot_booking_one.user = user1
 spot_booking_one.spot = spot1
 spot_booking_one.save!
@@ -66,17 +66,17 @@ spot_booking_two.user = user3
 spot_booking_two.spot = spot2
 spot_booking_two.save!
 
-spot_booking_three = SpotBooking.new(start_date: Date.yesterday, end_date: Date.tomorrow, is_approved: true)
+spot_booking_three = SpotBooking.new(start_date: Date.yesterday, end_date: Date.tomorrow, is_approved: false)
 spot_booking_three.user = user1
 spot_booking_three.spot = spot6
 spot_booking_three.save!
 
-spot_booking_four = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: true)
+spot_booking_four = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: false)
 spot_booking_four.user = user2
 spot_booking_four.spot = spot6
 spot_booking_four.save!
 
-spot_booking_five = SpotBooking.new(start_date: Date.today, end_date: Date.tomrrow, is_approved: true)
+spot_booking_five = SpotBooking.new(start_date: Date.today, end_date: Date.tomorrow, is_approved: true)
 spot_booking_five.user = user3
 spot_booking_five.spot = spot6
 spot_booking_five.save!

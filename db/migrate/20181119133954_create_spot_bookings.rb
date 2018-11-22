@@ -5,7 +5,7 @@ class CreateSpotBookings < ActiveRecord::Migration[5.2]
       t.references :user
       t.date :start_date
       t.date :end_date
-      t.boolean :is_approved
+      t.boolean :is_approved, default: false
 
       t.timestamps
     end
