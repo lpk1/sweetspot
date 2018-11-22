@@ -18,10 +18,10 @@
 
 
   <% if listing.user == current_user %>
-  <p class= "edit-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(listing)%></p>
+  <p class= "edit-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(listing), style: 'color:#5A5A5A'%></p>
   <% end %>
   <% if listing.user == current_user %>
-  <p class= "delete-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(listing), :method => :delete %></p>
+  <p class= "delete-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(listing), style: 'color:#5A5A5A', :method => :delete %></p>
   <% end %>
 
   <a class="card-link-listing" href="<%= spot_path(listing) %>" ></a>
