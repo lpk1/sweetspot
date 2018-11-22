@@ -8,4 +8,6 @@ class Spot < ApplicationRecord
   validates :latitude, length: { minimum: 4 }
   validates :longitude, length: { minimum: 4 }
   validates :description, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
