@@ -6,10 +6,10 @@
     <title>SweetSpot</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= stylesheet_pack_tag 'map' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'map' %>
   </head>
   <body>
     <!--<p class="notice"><%= notice %></p>
@@ -21,8 +21,8 @@
 
     <%= yield %>
       <%= render "shared/footer" %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'map' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+      <%= javascript_pack_tag 'map' %>
   </body>
 </html>
