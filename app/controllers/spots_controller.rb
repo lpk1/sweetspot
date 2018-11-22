@@ -36,11 +36,13 @@ class SpotsController < ApplicationController
 
   def edit
     @spot = Spot.find(params[:id])
+    authorize @spot
   end
 
   def update
     @spot = Spot.find(params[:id])
     @spot.update(spot_params)
+    authorize @spot
     redirect_to spot_path(@spot)
   end
 
