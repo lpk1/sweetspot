@@ -16,8 +16,12 @@
 
   <img class="card-user-listing" src="https://www.fabulousfaces.com/lib/upload/lrs1595.jpg">
 
+
   <% if listing.user == current_user %>
-  <p class= "delete" style= "z-index: 3;"><%= link_to "Delete",  spot_path(listing), :method => :delete %></p>
+  <p class= "edit-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(listing)%></p>
+  <% end %>
+  <% if listing.user == current_user %>
+  <p class= "delete-listing" style= "z-index: 3;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(listing), :method => :delete %></p>
   <% end %>
 
   <a class="card-link-listing" href="<%= spot_path(listing) %>" ></a>
