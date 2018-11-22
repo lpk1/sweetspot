@@ -30,6 +30,8 @@ class SpotsController < ApplicationController
     @reviews = SpotReview.where(spot_id: @spot)
     @review = SpotReview.new
     authorize @spot
+
+
   end
 
   def new
