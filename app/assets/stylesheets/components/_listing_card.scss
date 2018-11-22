@@ -30,17 +30,17 @@ h1.listing-page-title {
     object-fit: cover;
 }
 
+.listings-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .map_img-listing {
 
   display: block;
   margin-left: auto;
   margin-right: auto;
-    // position: absolute;
-    // right: 100px;
-    // top: 15px;
-    width: 300px;
 
-    border-radius: 5px;
 }
 
 .card-category-listing {

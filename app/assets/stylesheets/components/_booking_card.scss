@@ -20,6 +20,26 @@
   text-align: center;
 }
 
+.main_image-booking {
+    height: 200px;
+    width: 320px;
+    border-radius: 37px;
+    margin: 15px;
+    object-fit: cover;
+}
+
+.map_img-booking {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    // position: absolute;
+    // right: 100px;
+    // top: 15px;
+    // width: 300px;
+
+    // border-radius: 5px;
+}
 
 
 .card-category-booking {
