@@ -17,23 +17,23 @@ user2 = User.create(email: "christmaspowder@anonymous.com", password: "847463")
 user3 = User.create(email: "eastereggs@jamiesidea.com", password: "4829575")
 user4 = User.create(email: "lenny@me.com", password: "123456")
 
-spot1 = Spot.new(name: "Miami Beach", address: "Miami Beach", latitude: rand() * 90, longitude: rand() * 180, description: "Hi there this is a nice place in miami for camping.")
+spot1 = Spot.new(name: "Miami Beach", address: "Miami Beach", description: "Hi there this is a nice place in miami for camping.")
 spot1.user = user1
 spot1.save
 
-spot2 = Spot.new(name: "Southpole", address: "Southpole", latitude: rand() * 90, longitude: rand() * 180, description: "Southpole. Flat out stunning landscape. Haven't found an single eis-beergen")
+spot2 = Spot.new(name: "Schwepnitz", address: "Nesthakenweg 9", description: "Southpole. Flat out stunning landscape. Haven't found an single eis-beergen")
 spot2.user = user1
 spot2.save
 
-spot3 = Spot.new(name: "Bavaria", address: "München", latitude: rand() * 90, longitude: rand() * 180, description: "Bavariaaaaaaa. It has beeeeer")
+spot3 = Spot.new(name: "Munich", address: "Karlstrasse 35",  description: "Bavariaaaaaaa. It has beeeeer")
 spot3.user = user3
 spot3.save
 
-spot4 = Spot.new(name: "Berlin", address: "rudi-dutschke-strasse 60", latitude: rand() * 90, longitude: rand() * 180, description: "Berlin. City of awsome. Is this enough characters?")
+spot4 = Spot.new(name: "Berlin", address: "rudi-dutschke-strasse 60",  description: "Berlin. City of awsome. Is this enough characters?")
 spot4.user = user3
 spot4.save
 
-spot5 = Spot.new(name: "Santa Cruz", address: "Santa Cruz", latitude: rand() * 90, longitude: rand() * 180, description: "Santa Cruz. Home town to crazy mfkrs.")
+spot5 = Spot.new(name: "Coin, Spain", address: "Plaza de la Alameda",  description: "Santa Cruz. Home town to crazy mfkrs.")
 spot5.user = user2
 spot5.save
 
