@@ -35,24 +35,27 @@
         <% else %>
           <% if @your_bookings.length > 0 %>
             <h3>Your Bookings:</h3>
+
             <% @your_bookings.each do |booking| %>
               <h3><%= (booking.end_date - booking.start_date).to_i %> Days @<%= booking.spot.name %></h3>
-              <h4>From the <%= booking.start_date %> until the <%= booking.end_date %></h4>
+
+              <% if booking.is_approved %>
+                <span style="display: inline;"><i class="fas fa-circle" style="color: green"></i></span>
+                <p style="display: inline;" class="approved">Approval: <%= "Approved!" %></p>
+              <% else %>
+                <span style="display: inline;"><i class="fas fa-circle" style="color: red"></i></span>
+                <p style="display: inline;" class= "pending">Approval: <%= "Pending" %></p>
+              <% end %>
+
+              <h5>From the <%= booking.start_date %> until the <%= booking.end_date %></h5>
             <% end %>
+            <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"%></h3>
             <br>
-            <br>
-            <h3><%= link_to "Book again!", new_spot_spot_booking_path(@spot)%></h3>
           <% else %>
             <h3><%= link_to "Book this Spot now!", new_spot_spot_booking_path(@spot), class: "btn btn-lg btn-primary btn-book"  %></h3>
           <% end %>
         <% end %>
 
-        <% @reviews.each do |review| %>
-          <div class="show-review">
-            <h5><%= review.user.email %> wrote on <%= review.created_at %>:</h5>
-            <h6><%= review.review_description %></h6>
-          </div>
-        <% end %>
 
         <br>
 
@@ -68,9 +71,18 @@
     </div>
 
     <div class="col-xs-12 col-sm-6">
+
       <div class="show-map">
         <img class="show-map-image" src="https://snazzy-maps-cdn.azureedge.net/assets/127403-no-label-bright-colors.png?v=20171101110035" alt="">
       </div>
+
+        <% @reviews.each do |review| %>
+          <div class="show-review">
+            <h5><%= review.user.email %> wrote on <%= review.created_at %>:</h5>
+            <h6>- <%= review.review_description %></h6>
+          </div>
+        <% end %>
+
     </div>
   </div>
 </div>
