@@ -8,14 +8,13 @@
 
 .flex-map-item {
   flex: 0 0 450px;
-  height: 100vh;
+  height: calc(100vh - 120px);
   position: sticky !important;
   top: 0 !important;
 }
 
 #map {
     flex: 0 0 450px;
-    height: 100vh;
     position: sticky !important;
     top: 0 !important;
 }
