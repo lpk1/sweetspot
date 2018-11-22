@@ -31,7 +31,15 @@ class SpotsController < ApplicationController
     @review = SpotReview.new
     authorize @spot
 
+    @map_spot = Spot.where(id: @spot.id)
+    @markers = @map_spot.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
 
+      }
+    end
   end
 
   def new
