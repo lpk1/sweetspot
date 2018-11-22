@@ -1,12 +1,13 @@
-<% if @listings.length != 0 %>
-  <h1>Your Listings:</h1>
-  <% @listings.each do |listing| %>
-    <br>
-    <%= render "shared/listing_card", listing: listing %>
+<div class="container">
+  <% if @listings.length != 0 %>
+    <h1>Your Listings:</h1>
+    <p class="add-spot", style="text-align:right;"><%= link_to "Add another Spot!", new_spot_path %></p>
+    <% @listings.each do |listing| %>
+      <br>
+      <%= render "shared/listing_card", listing: listing %>
+    <% end %>
+  <% else %>
+    <h3>You don't have any listings so far. Go ahead,</h3>
+    <h1><%= link_to "Add your Spot!", new_spot_path %></h1>
   <% end %>
-<% else %>
-  <h3>You don't have any listings so far. Go ahead,</h3>
-  <h1><%= link_to "Add your Spot!", new_spot_path %></h1>
-<% end %>
-
-<!-- </div> -->
+</div>
