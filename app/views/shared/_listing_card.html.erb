@@ -11,8 +11,9 @@
 
 
 
-  <img class="main_image" src="http://www.thetimenow.com/blog/wp-content/uploads/2017/04/Olympic-National-Park-Washington-min.jpg">
-  <img class="map_img" src="https://staticmapmaker.com/img/google.png">
+  <img class="main_image-listing" src="<%= cl_image_path listing.photo %>">
+
+
 
   <img class="card-user-listing" src="https://www.fabulousfaces.com/lib/upload/lrs1595.jpg">
 
@@ -25,5 +26,7 @@
   <% end %>
 
   <a class="card-link-listing" href="<%= spot_path(listing) %>" ></a>
+
+
 
 </div>
