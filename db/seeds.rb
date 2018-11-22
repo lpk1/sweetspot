@@ -37,6 +37,10 @@ spot5 = Spot.new(name: "Santa Cruz", address: "Santa Cruz", latitude: rand() * 9
 spot5.user = user2
 spot5.save
 
+spot6 = Spot.new(name: "Lennys Crib", address: "@Lennys - The greatest place", latitude: rand() * 90, longitude: rand() * 180, description: "Everyone is welcome at all times. Requirements include a sixpack of Corona.")
+spot6.user = user4
+spot6.save
+
 spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing. Miami is the sh*t.")
 spot_review.user = user1
 spot_review.spot = spot1
@@ -61,3 +65,18 @@ spot_booking_two = SpotBooking.new(start_date: Date.yesterday, end_date: Date.to
 spot_booking_two.user = user3
 spot_booking_two.spot = spot2
 spot_booking_two.save!
+
+spot_booking_three = SpotBooking.new(start_date: Date.yesterday, end_date: Date.tomorrow, is_approved: true)
+spot_booking_three.user = user1
+spot_booking_three.spot = spot6
+spot_booking_three.save!
+
+spot_booking_four = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: true)
+spot_booking_four.user = user2
+spot_booking_four.spot = spot6
+spot_booking_four.save!
+
+spot_booking_five = SpotBooking.new(start_date: Date.today, end_date: Date.tomrrow, is_approved: true)
+spot_booking_five.user = user3
+spot_booking_five.spot = spot6
+spot_booking_five.save!
