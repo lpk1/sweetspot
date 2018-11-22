@@ -21,34 +21,34 @@ spot1 = Spot.new(
   name: "Miami Beach",
   address: "Miami Beach",
   description: "Hi there this is a nice place in miami for camping.",
-  photo: open()
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/miami.jpg')
   )
 spot1.user = user1
 spot1.save
 
 spot2 = Spot.new(
-  name: "Schwepnitz",
-  address: "Nesthakenweg 9",
-  description: "Southpole. Flat out stunning landscape.",
-  photo: open()
+  name: "Nice Lake in Brandenburg",
+  address: "Brandenburg",
+  description: "Beautiful Lake Spot",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/bandenburg.jpg')
   )
 spot2.user = user1
 spot2.save
 
 spot3 = Spot.new(
-  name: "Munich",
+  name: "Great View in Bavaria",
   address: "Karlstrasse 35",
   description: "Bavariaaaaaaa. It has beeeeer",
-  photo: open()
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/bavaria.jpg')
   )
 spot3.user = user3
 spot3.save
 
 spot4 = Spot.new(
   name: "Berlin",
-  address: "rudi-dutschke-strasse 60",
-  description: "Berlin. City of awsome. Is this enough characters?",
-  photo: open()
+  address: "Ostkreuz",
+  description: "Berlin. Great place to wait ouside of clubs in the winter",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/berlin.jpg')
   )
 spot4.user = user3
 spot4.save
@@ -57,7 +57,7 @@ spot5 = Spot.new(
   name: "Coin, Spain",
   address: "Plaza de la Alameda",
   description: "Santa Cruz. Home town to crazy mfkrs.",
-  photo: open()
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896210/spain.jpg')
   )
 spot5.user = user2
 spot5.save
@@ -65,8 +65,8 @@ spot5.save
 spot6 = Spot.new(
   name: "Lennys Crib",
   address: "Cote d'azur",
-  description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful."
-  photo: open()
+  description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/lenny.jpg')
   )
 spot6.user = user4
 spot6.save
