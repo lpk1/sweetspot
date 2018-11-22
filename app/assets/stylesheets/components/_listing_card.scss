@@ -6,12 +6,14 @@
   color: #5A5A5A;
   position: relative;
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
+  h1{
+    color: #5A5A5A;
+    text-align: center;
+  }
 }
 
-h1{
-  color: #5A5A5A;
-  text-align: center;
-}
+
 
 .card-user-listing {
   position: absolute;
