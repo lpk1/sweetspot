@@ -1,6 +1,6 @@
 class Spot < ApplicationRecord
-  has_many :spot_reviews
-  has_many :spot_bookings
+  has_many :spot_reviews, :dependent => :destroy
+  has_many :spot_bookings, :dependent => :destroy
   belongs_to :user
 
   validates :name, presence: true, length: { minimum: 6 }
