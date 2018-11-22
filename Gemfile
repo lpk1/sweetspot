@@ -17,7 +17,10 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'devise'
-gem "pundit"
+gem 'pundit'
+gem "cloudinary", "1.10.1.pre.rc"
+gem 'carrierwave', '~> 1.2'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
