@@ -1,6 +1,6 @@
 <div class="container">
   <% if @listings.length != 0 %>
-    <h1>Your Listings:</h1>
+    <h1 class= "listing-page-title">Your Listings:</h1>
     <p class="add-spot", style="text-align:right;"><%= link_to "Add another Spot!", new_spot_path %></p>
     <% @listings.each do |listing| %>
       <br>
