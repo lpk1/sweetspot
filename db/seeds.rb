@@ -8,6 +8,7 @@ user1 = User.create(email: "testemail@12345me.com", password: "123456")
 user2 = User.create(email: "christmaspowder@anonymous.com", password: "847463")
 user3 = User.create(email: "eastereggs@jamiesidea.com", password: "4829575")
 user4 = User.create(email: "lenny@me.com", password: "123456")
+user5 = User.create(email: "tim@me.com", password: "234567")
 
 spot1 = Spot.new(
   name: "Miami Beach",
@@ -62,6 +63,60 @@ spot6 = Spot.new(
   )
 spot6.user = user4
 spot6.save
+
+spot7 = Spot.new(
+  name: "Jamies Crib",
+  address: "Santa Clara",
+  description: "Very beautiful sail boat",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542903500/boat-classic-clouds-173910.jpg')
+  )
+spot7.user = user4
+spot7.save
+
+spot8 = Spot.new(
+  name: "Rhett's Crib",
+  address: "Dresden, Germany",
+  description: "Lots of techno and drugs there",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542903604/rhett.jpg')
+  )
+spot8.user = user4
+spot8.save
+
+spot9 = Spot.new(
+  name: "Tim's Crib",
+  address: "Has free heating",
+  description: "not so much daylight",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904020/tim.jpg')
+  )
+spot9.user = user4
+spot9.save
+
+spot10 = Spot.new(
+  name: "Coast in Scotland",
+  address: "Scotland",
+  description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904174/scotland.jpg')
+  )
+spot10.user = user4
+spot10.save
+
+spot11 = Spot.new(
+  name: "Rice field in Bali",
+  address: "Bali, INdonesia",
+  description: "Lots of rice here.",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904256/bali.jpg')
+  )
+spot11.user = user4
+spot11.save
+
+spot12 = Spot.new(
+  name: "Mountains in Yunnan Province",
+  address: "Yunnan Province",
+  description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904348/yunnan.jpg')
+  )
+spot12.user = user4
+spot12.save
 
 spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing. Miami is the sh*t.")
 spot_review.user = user1
