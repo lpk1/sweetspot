@@ -5,4 +5,21 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  font-style: bold;
+  color: black;
+}
+
+#map {
+  margin-top: 15px;
+}
+
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  background-color: #CDF7F6 ;
+  border-radius: 10%;
+}
+
+.mapboxgl-ctrl-geocoder ul {
+  background-color: #CDF7F6 ;
+  border-radius: 10%;
+  color: white;
 }
