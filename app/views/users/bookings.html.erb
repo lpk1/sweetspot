@@ -1,18 +1,23 @@
 
+
+
+<div class="map_img-booking map-fullscreen">
+    <div
+      id="map"
+      style="width: 100vw;
+      height: 35vh;
+      border-radius: 5px"
+
+
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
 <div class="container">
+
   <h1 class= "booking-page-title">Your Bookings:</h1>
 
-  <div class="map_img-booking">
-      <div
-        id="map"
-        style="width: 300px;
-        height: 200px;
-        border-radius: 5px"
-
-
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
   <br>
 
   <% @bookings.each do |booking| %>
