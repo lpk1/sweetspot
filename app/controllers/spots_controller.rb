@@ -3,6 +3,17 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot).all
+
+    @map_spots = Spot.where.not(latitude: nil, longitude: nil)
+
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
+
+      }
+    end
   end
 
   def show
