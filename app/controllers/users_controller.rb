@@ -6,6 +6,16 @@ class UsersController < ApplicationController
   def listings
     @listings = Spot.where(user_id: current_user.id)
     authorize @listings
+
+    @map_spots = Spot.where(user_id: current_user.id)
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
+
+      }
+    end
   end
 
   def bookings
