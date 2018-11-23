@@ -9,6 +9,10 @@
 
         <div class="show-title">
           <h1><%= @spot.name %></h1>
+          <% if @spot.user == current_user %>
+            <h4 class= "fontawesome" style="display: inline;"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(@spot), style: 'color:#5A5A5A'%></h4>
+            <h4 class= "fontawesome" style="display: inline;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(@spot), style: 'color:#5A5A5A', :method => :delete %></h4>
+          <% end %>
         </div>
 
         <br>
@@ -48,10 +52,7 @@
 
         <br>
 
-        <% if @spot.user == current_user %>
-          <p class= "fontawesome"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(@spot), style: 'color:#5A5A5A'%></p>
-          <p class= "fontawesome"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(@spot), style: 'color:#5A5A5A', :method => :delete %></p>
-        <% end %>
+
 
         <br>
         <br>

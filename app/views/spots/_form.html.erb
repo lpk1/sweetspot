@@ -1,4 +1,15 @@
 <%= simple_form_for [@spot] do |f| %>
+
+  <% if @spot.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @spot.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <%= f.input :name, label: "Title" %>
   <%= f.input :address, label: "Address" %>
   <%= f.input :description, label: "Description"  %>

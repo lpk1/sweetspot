@@ -48,11 +48,14 @@ class SpotsController < ApplicationController
   end
 
   def create
-    spot = Spot.new(spot_params)
-    authorize spot
-    spot.user = current_user
-    spot.save
-    redirect_to spots_path
+    @spot = Spot.new(spot_params)
+    authorize @spot
+    @spot.user = current_user
+    if @spot.save
+      redirect_to spot_path(@spot)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -62,9 +65,12 @@ class SpotsController < ApplicationController
 
   def update
     @spot = Spot.find(params[:id])
-    @spot.update(spot_params)
+    if @spot.update(spot_params)
+      redirect_to spot_path(@spot)
+    else
+      render :edit
+    end
     authorize @spot
-    redirect_to spot_path(@spot)
   end
 
   def destroy
