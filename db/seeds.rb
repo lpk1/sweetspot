@@ -9,7 +9,7 @@ user2 = User.create(email: "christmaspowder@anonymous.com", password: "847463")
 user3 = User.create(email: "eastereggs@jamiesidea.com", password: "4829575")
 user4 = User.create(email: "lenny@me.com", password: "123456")
 user5 = User.create(email: "tim@me.com", password: "234567")
-user6 = User.create(email: "jamie@sweetspot.com, password: 123456")
+user6 = User.create(email: "bob@sweetspot.com", password: "123456")
 
 spot1 = Spot.new(
   name: "Brandenburg Gate",
@@ -26,7 +26,7 @@ spot2 = Spot.new(
   description: "Right in the center of the political Berlin",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542969136/architecture-berlin-building-86456.jpg')
   )
-spot2.user = user1
+spot2.user = user6
 spot2.save
 
 spot3 = Spot.new(
@@ -95,7 +95,7 @@ spot9.save
 spot10 = Spot.new(
   name: "Secret Coast in Berlin",
   address: "Fischerinsel, 10179 Berlin, Germany",
-  description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
+  description: "Lonely Place at the forgotten coast of Berlin.",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904174/scotland.jpg')
   )
 spot10.user = user4
@@ -119,19 +119,39 @@ spot12 = Spot.new(
 spot12.user = user4
 spot12.save
 
-spot_review = SpotReview.new(spot_rating: 5, review_description: "Amaaziiiing. Miami is the sh*t.")
-spot_review.user = user1
-spot_review.spot = spot1
+spot_review = SpotReview.new(spot_rating: 5, review_description: "Pretty clean for Berlin standards :)")
+spot_review.user = user6
+spot_review.spot = spot10
 spot_review.save!
 
-spot_review_two = SpotReview.new(spot_rating: 3, review_description: "Can NOT believe how good this was.")
-spot_review_two.user = user2
-spot_review_two.spot = spot2
+spot_review = SpotReview.new(spot_rating: 5, review_description: "bad place to sell drugs, only romantic couples here... :/")
+spot_review.user = user4
+spot_review.spot = spot10
+spot_review.save!
+
+spot_review = SpotReview.new(spot_rating: 5, review_description: "No späti here... went back schlesi really fast to get some more beer...")
+spot_review.user = user3
+spot_review.spot = spot10
+spot_review.save!
+
+spot_review_two = SpotReview.new(spot_rating: 3, review_description: "Soft concrete, smells like old beer.")
+spot_review_two.user = user5
+spot_review_two.spot = spot6
 spot_review_two.save!
 
-spot_review_three = SpotReview.new(spot_rating: 4, review_description: "Can NOT believe how good this was.")
-spot_review_two.user = user3
-spot_review_two.spot = spot1
+spot_review_two = SpotReview.new(spot_rating: 3, review_description: "Lots fo cigerettes that are only half smoked")
+spot_review_two.user = user2
+spot_review_two.spot = spot6
+spot_review_two.save!
+
+spot_review_three = SpotReview.new(spot_rating: 4, review_description: "Very calm here - crazy boy running around though")
+spot_review_two.user = user2
+spot_review_two.spot = spot11
+spot_review_two.save!
+
+spot_review_three = SpotReview.new(spot_rating: 4, review_description: "Calm place, always smells like weed.")
+spot_review_two.user = user2
+spot_review_two.spot = spot11
 spot_review_two.save!
 
 spot_booking_one = SpotBooking.new(start_date: Date.yesterday, end_date: Date.today, is_approved: false)
