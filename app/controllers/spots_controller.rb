@@ -37,7 +37,6 @@ class SpotsController < ApplicationController
         lng: spot.longitude,
         lat: spot.latitude,
         infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
-
       }
     end
   end
@@ -45,6 +44,16 @@ class SpotsController < ApplicationController
   def new
     @spot = Spot.new
     authorize @spot
+
+    @map_spots = Spot.where.not(latitude: nil, longitude: nil)
+
+    @markers = @map_spots.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
+      }
+    end
   end
 
   def create
@@ -57,7 +66,15 @@ class SpotsController < ApplicationController
 
   def edit
     @spot = Spot.find(params[:id])
+    @map_spot = Spot.where(id: @spot.id)
     authorize @spot
+    @markers = @map_spot.map do |spot|
+      {
+        lng: spot.longitude,
+        lat: spot.latitude,
+        infoWindow: { content: render_to_string(partial: "/spots/map_window", locals: { spot: spot }) }
+      }
+    end
   end
 
   def update
