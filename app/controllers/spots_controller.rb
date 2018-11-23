@@ -40,11 +40,14 @@ class SpotsController < ApplicationController
   end
 
   def create
-    spot = Spot.new(spot_params)
-    authorize spot
-    spot.user = current_user
-    spot.save
-    redirect_to spots_path
+    @spot = Spot.new(spot_params)
+    authorize @spot
+    @spot.user = current_user
+    if @spot.save
+      redirect_to spot_path(@spot)
+    else
+      render :new
+    end
   end
 
   def edit
