@@ -11,6 +11,7 @@ user4 = User.create(email: "lenny@me.com", password: "123456")
 user5 = User.create(email: "tim@me.com", password: "234567")
 user6 = User.create(email: "bob@sweetspot.com", password: "123456")
 
+
 spot1 = Spot.new(
   name: "Brandenburg Gate",
   address: "Brandenburg Gate, Pariser Platz, Berlin, 10117, Germany",
