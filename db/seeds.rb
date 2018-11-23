@@ -9,37 +9,38 @@ user2 = User.create(email: "christmaspowder@anonymous.com", password: "847463")
 user3 = User.create(email: "eastereggs@jamiesidea.com", password: "4829575")
 user4 = User.create(email: "lenny@me.com", password: "123456")
 user5 = User.create(email: "tim@me.com", password: "234567")
+user6 = User.create(email: "jamie@sweetspot.com, password: 123456")
 
 spot1 = Spot.new(
-  name: "Miami Beach",
-  address: "Miami Beach",
-  description: "Hi there this is a nice place in miami for camping.",
-  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/miami.jpg')
+  name: "Brandenburg Gate",
+  address: "Brandenburg Gate, Pariser Platz, Berlin, 10117, Germany",
+  description: "Very Central",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542969038/brandenburg_gate.jpg')
   )
 spot1.user = user1
 spot1.save
 
 spot2 = Spot.new(
-  name: "Nice Lake in Brandenburg",
-  address: "Brandenburg",
-  description: "Beautiful Lake Spot",
-  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/bandenburg.jpg')
+  name: "German Parliament",
+  address: "Reichstag, Platz der Republik 1, Berlin, 10557, Germany",
+  description: "Right in the center of the political Berlin",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542969136/architecture-berlin-building-86456.jpg')
   )
 spot2.user = user1
 spot2.save
 
 spot3 = Spot.new(
-  name: "Great View in Bavaria",
-  address: "Karlstrasse 35",
-  description: "Bavariaaaaaaa. It has beeeeer",
-  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/bavaria.jpg')
+  name: "Museum Island",
+  address: "Am Lustgarten, 10178 Berlin, Germany",
+  description: "Great Spot in the middle of the museum island in Berlin",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542969288/museum.jpg')
   )
 spot3.user = user3
 spot3.save
 
 spot4 = Spot.new(
-  name: "Berlin",
-  address: "Ostkreuz",
+  name: "Berghain",
+  address: "Berghain OstGut GmbH, Rüdersdorfer Straße 70, Berlin, 10243, Germany",
   description: "Berlin. Great place to wait ouside of clubs in the winter",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/berlin.jpg')
   )
@@ -47,17 +48,17 @@ spot4.user = user3
 spot4.save
 
 spot5 = Spot.new(
-  name: "Coin, Spain",
-  address: "Plaza de la Alameda",
-  description: "Santa Cruz. Home town to crazy mfkrs.",
-  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896210/spain.jpg')
+  name: "East Side Galery",
+  address: "East Side Gallery, Mühlenstr., Berlin, 10243, Germany",
+  description: "Lots of traffic and tourists",
+  photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542969758/eastsidegalery.jpg')
   )
 spot5.user = user2
 spot5.save
 
 spot6 = Spot.new(
   name: "Lennys Crib",
-  address: "Cote d'azur",
+  address: "Marschallbrücke, Luisenstr., Berlin, 10117, Germany",
   description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542896208/lenny.jpg')
   )
@@ -65,8 +66,8 @@ spot6.user = user4
 spot6.save
 
 spot7 = Spot.new(
-  name: "Jamies Crib",
-  address: "Santa Clara",
+  name: "River View",
+  address: "Kapelle-Ufer, 10117 Berlin, Germany",
   description: "Very beautiful sail boat",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542903500/boat-classic-clouds-173910.jpg')
   )
@@ -75,7 +76,7 @@ spot7.save
 
 spot8 = Spot.new(
   name: "Rhett's Crib",
-  address: "Dresden, Germany",
+  address: "Alexanderplatz, Berlin, Germany",
   description: "Lots of techno and drugs there",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542903604/rhett.jpg')
   )
@@ -84,7 +85,7 @@ spot8.save
 
 spot9 = Spot.new(
   name: "Tim's Crib",
-  address: "Has free heating",
+  address: "Brunnenstraße, 13355 Berlin, Germany",
   description: "not so much daylight",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904020/tim.jpg')
   )
@@ -92,8 +93,8 @@ spot9.user = user4
 spot9.save
 
 spot10 = Spot.new(
-  name: "Coast in Scotland",
-  address: "Scotland",
+  name: "Secret Coast in Berlin",
+  address: "Fischerinsel, 10179 Berlin, Germany",
   description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904174/scotland.jpg')
   )
@@ -101,17 +102,17 @@ spot10.user = user4
 spot10.save
 
 spot11 = Spot.new(
-  name: "Rice field in Bali",
-  address: "Bali, INdonesia",
-  description: "Lots of rice here.",
+  name: "Rhett's Garden",
+  address: "Tiergarten, Straße des 17. Juni, Berlin, 10785, Germany",
+  description: "Lots of interesting plants here",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904256/bali.jpg')
   )
 spot11.user = user4
 spot11.save
 
 spot12 = Spot.new(
-  name: "Mountains in Yunnan Province",
-  address: "Yunnan Province",
+  name: "Nice Hill in Kreuzberg",
+  address: "Kreuzberg",
   description: "Everyone is welcome at all times. Requirements include a sixpack of Corona. Yes, his taste is aweful.",
   photo: open('https://res.cloudinary.com/dd7ah4ho2/image/upload/v1542904348/yunnan.jpg')
   )
