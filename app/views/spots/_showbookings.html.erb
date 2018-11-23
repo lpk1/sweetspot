@@ -11,8 +11,8 @@
       <i class="fas fa-circle" style="color: green; display: inline;"></i>
       <p style="display: inline;" class="approved">Status: <%= "Approved!" %></p>
     <% else %>
-      <i class="fas fa-circle" style="color: red; display: inline;"></i>
-      <p style="display: inline;" class= "pending">Status: <%= "Pending" %></p>
+      <i class="fas fa-circle" style="color: #EB5757; display: inline;"></i>
+      <p style="color: #EB5757; display: inline;" class= "pending">Status: <%= "Pending" %></p>
 
     <%# This is to add a booking removal button. Only visible if booking is pending, not approved. %>
     <p style= "z-index: 3; display: inline-block;"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_spot_booking_path(booking.spot, booking), style: "color: #5a5a5a;", :method => :delete %></p>

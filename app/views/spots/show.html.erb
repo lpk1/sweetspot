@@ -33,7 +33,7 @@
         <br>
 
         <% if @spot.user == current_user %>
-          <h3 style="text-align: center;">Others Bookings</h3>
+          <h3 style="text-align: center;">Bookings of Your Spot:</h3>
           <%= render "showbookings", your_bookings: @your_bookings %>
         <% else %>
           <% if @your_bookings.length > 0 %>
@@ -49,13 +49,14 @@
         <br>
 
         <% if @spot.user == current_user %>
-          <%= link_to "Delete this spot",  spot_path(@spot), :method => :delete %>
+          <p class= "fontawesome"><%= link_to '<i class="fas fa-pencil-alt"></i>'.html_safe,  edit_spot_path(@spot), style: 'color:#5A5A5A'%></p>
+          <p class= "fontawesome"><%= link_to '<i class="fas fa-trash"></i>'.html_safe,  spot_path(@spot), style: 'color:#5A5A5A', :method => :delete %></p>
         <% end %>
 
         <br>
         <br>
 
-        <%= link_to "Go Back",  spots_path %>
+        <%= link_to '<i class="far fa-arrow-alt-circle-left"></i>'.html_safe,  spots_path, style: 'color:#5A5A5A' %>
       </div>
     </div>
 
@@ -71,12 +72,12 @@
         </div>
       </div>
 
-        <% @reviews.each do |review| %>
-          <div class="show-review">
-            <h5><%= review.user.email %> wrote on <%= review.created_at %>:</h5>
-            <h6>- <%= review.review_description %></h6>
-          </div>
-        <% end %>
+      <% @reviews.each do |review| %>
+        <div class="show-review">
+          <h5><%= review.user.email %> wrote on <%= review.created_at %>:</h5>
+          <h6>- <%= review.review_description %></h6>
+        </div>
+      <% end %>
 
     </div>
   </div>
