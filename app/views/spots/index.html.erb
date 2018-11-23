@@ -4,11 +4,12 @@
       <div class="row">
         <% @spots.each do |spot| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: url(<%= cl_image_path spot.photo %>);">
-            <div class="card-description">
-              <h2> <%= link_to "#{spot.name}", spot_path(spot), {:style=>'color:#FFFFFF'} %></h2>
+          <div class="card" style="background-image: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path spot.photo, height: 300, width: 400, crop: :fill %>);">
+              <div class="card-description">
+                <h2> <%= link_to "#{spot.name}" , spot_path(spot), {:style=>'color:#FFFFFF'} %></h2>
+                <a class="card-link-listing" href="<%= spot_path(spot) %>" ></a>
+              </div>
             </div>
-          </div>
         </div>
         <% end %>
     </div>
